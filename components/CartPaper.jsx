@@ -12,7 +12,7 @@ const CartPaper = ({ modalState }) => {
 
   return (
     <div 
-        className={`${modalState.isCartOpen && 'block' || 'hidden'}  fixed left-0 top-16 right-0 flex items-start justify-start z-20`}
+        className={`${modalState.isCartOpen && 'block' || 'hidden'}  fixed left-0 top-16 right-0 flex items-start justify-start z-20 overflow-y-auto`}
     >
     
         <div  

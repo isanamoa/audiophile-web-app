@@ -4,7 +4,7 @@ import ProductSection from './ProductSection'
 const MenuLists = ({ isMenuOpen }) => {
   return (
     <div 
-        className={`${isMenuOpen && 'block' || 'hidden'}  md:hidden bg-white fixed left-0 top-12 right-0 flex items-center justify-center z-20`}
+        className={`${isMenuOpen && 'block' || 'hidden'}  md:hidden bg-white fixed left-0 top-12 right-0 flex items-center justify-center z-20 overflow-y-auto`}
     >
       
       <div 
