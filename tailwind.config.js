@@ -8,9 +8,12 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'hero-mobile': "url('/assets/home/mobile/image-header.jpg')",
+        'hero-tablet': "url('/assets/home/tablet/image-header.jpg')",
+        'hero-desktop': "url('/assets/home/desktop/image-hero.jpg')",
+        'footer-mobile': "url('/assets/shared/mobile/image-best-gear.jpg')",
+        'footer-tablet': "url('/assets/shared/tablet/image-best-gear.jpg')",
+        'footer-desktop': "url('/assets/shared/desktop/image-best-gear.jpg')"
       },
     },
   },
