@@ -7,7 +7,7 @@ const BackNavigate = ({ newHref }) => {
       <Link
         underline='none'
         component="button"
-        onClick={() => router.prefetch(newHref)}
+        onClick={() => router.push(newHref)}
         sx={{ height:'48px', 
           mt:3, color:'#000',
           backgroundColor: "transparent",

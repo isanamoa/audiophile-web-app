@@ -24,7 +24,7 @@ const Header = () => {
     <header className='fixed z-50 w-full flex justify-between items-center px-4 py-5 md:px-0 text-white bg-black shadow-lg'>
       <div className='relative z-10 w-full bg-black shadow-lg lg:w-4/5 mx-auto flex justify-between items-center'>
         <div>
-            <Menu sx={{cursor: 'pointer', display: {xs:'block', sm:'none'}}} onClick={MenuToggle}/>
+            <Menu sx={{cursor: 'pointer', display: {xs:'block', sm:'none', md:'none', lg:'none'}}} onClick={MenuToggle}/>
             <Link href="/" underline='none' 
               sx={{color: '#FFF', cursor: 'pointer', 
               fontSize: '0.813rem', 
@@ -43,17 +43,17 @@ const Header = () => {
             
             <Link underline='none' 
               component="button"
-              onClick={() => router.prefetch("/category/headphones")}
+              onClick={() => router.push("/category/headphones")}
               sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'} }}>Headphones</Link>
             
             <Link underline='none' 
               component="button"
-              onClick={() => router.prefetch("/category/speakers")}
+              onClick={() => router.push("/category/speakers")}
               sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'}  }}>Speakers</Link>
             
             <Link underline='none' 
               component="button"
-              onClick={() => router.prefetch("/category/earphones")}
+              onClick={() => router.push("/category/earphones")}
               sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'} }}>Earphones</Link>
           
           </div>
@@ -82,7 +82,7 @@ const Header = () => {
       </div>
 
       <MenuLists isMenuOpen={isMenuOpen} />
-      
+
     </header>
   )
 }
