@@ -5,7 +5,7 @@ import { Link } from '@mui/material';
 import CartPaper from './CartPaper';
 import MenuLists from './MenuLists';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -37,24 +37,24 @@ const Header = () => {
             </Link>
         </div>
         <div>
-          <div className='hidden md:flex flex-row gap-2 md:gap-x-10 justify-start  items-start font-bold uppercase'>
+          <div className='hidden md:flex flex-row gap-2 md:gap-x-10 justify-start  items-start font-bold '>
             <Link href="/" underline='none' 
-              sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'} }}>Home</Link>
+              sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'} }}>HOME</Link>
             
             <Link underline='none' 
               component="button"
               onClick={() => router.push("/category/headphones")}
-              sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'} }}>Headphones</Link>
+              sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'} }}>HEADPHONES</Link>
             
             <Link underline='none' 
               component="button"
               onClick={() => router.push("/category/speakers")}
-              sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'}  }}>Speakers</Link>
+              sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'}  }}>SPEAKERS</Link>
             
             <Link underline='none' 
               component="button"
               onClick={() => router.push("/category/earphones")}
-              sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'} }}>Earphones</Link>
+              sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'} }}>EARPHONES</Link>
           
           </div>
             

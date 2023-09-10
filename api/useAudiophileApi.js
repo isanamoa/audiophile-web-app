@@ -6,23 +6,37 @@ const useAudiophileApi = () => {
 
     //Default fetch
     const fetchData = () => {
-        setFileData(Data);
+        try {
+            setFileData(Data);
+        } catch (error) {
+            console.log(error); 
+        }
+        
     }
 
     useEffect(()=>{ fetchData() }, []);
 
-    //Default fetch
+    //Default fetch by category
     const fetchCategory = (product) => {
-        setFileData(
-            Data.filter(({ category }) => category === product )
-        );
+        try {
+            setFileData(
+                Data.filter(({ category }) => category === product )
+            );
+        } catch (error) {
+            console.log(error); 
+        }
+        
     }
 
-    //Default fetch
+    //Default fetch item by id
     const fetchProductByID = (productName) => {
-        setFileData(
-            Data.find(({ slug }) => slug === productName )
-        );
+        try {
+            setFileData(
+                Data.find(({ slug }) => slug === productName )
+            ); 
+        } catch (error) {
+            console.log(error); 
+        }
     }
 
   return { fileData, fetchCategory, fetchProductByID };

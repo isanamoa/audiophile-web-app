@@ -4,8 +4,8 @@ import Hero from './Hero'
 
 const HeroSection = () => {
   return (
-    <div className='bg-black text-white w-full relative z-0 sm:flex sm:justify-between'>
-      <Header />
+    <div className='bg-black text-white w-full'>
+      {<Header />}
       <Hero />
     </div>
   )
