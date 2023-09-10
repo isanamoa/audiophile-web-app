@@ -4,8 +4,10 @@ import { Link } from '@mui/material';
 const BackNavigate = ({ newHref }) => {
   return (
     <div className='w-full py-2 px-5 md:w-4/5 md:mx-auto md:px-0 md:py-5'>
-      <Link href={newHref}
+      <Link
         underline='none'
+        component="button"
+        onClick={() => router.prefetch(newHref)}
         sx={{ height:'48px', 
           mt:3, color:'#000',
           backgroundColor: "transparent",
