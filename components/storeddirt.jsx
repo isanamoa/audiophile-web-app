@@ -1,12 +1,10 @@
-import React from 'react'
+/*import React from 'react'
 
 const storeddirt = () => {
   return (
     <div>
       <div className="relative w-full max-w-[540px] max-h-full p-3">
-          {/* Modal Content */}
           <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-              {/* Modal header */}
               <div className="flex gap-3 flex-col items-start justify-start p-4 border-b rounded-t dark:border-gray-600">
                   <div className='py-3 text-white px-5 rounded-full bg-[#D87D4A]'>
                       +
@@ -16,9 +14,7 @@ const storeddirt = () => {
                   </h3>
                   <p className='first-letter:capitalize opacity-50'>you will receive an email confirmation shortly</p>
               </div>
-              {/* Modal body */}
               <div className="p-6 space-y-6 flex items-center justify-center">
-                  {/** Cart list block */}
 
                   <div className='w-full flex justify-between'>
 
@@ -60,7 +56,6 @@ const storeddirt = () => {
 
               </div>
               
-              {/* Modal footer */}
               <div className='flex flex-col p-6 space-y-6 gap-2'>
                   
                   <SeeButton 
@@ -82,3 +77,4 @@ const storeddirt = () => {
 }
 
 export default storeddirt
+*/
