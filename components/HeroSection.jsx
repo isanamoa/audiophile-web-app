@@ -4,7 +4,7 @@ import Hero from './Hero'
 
 const HeroSection = () => {
   return (
-    <div className='bg-black text-white w-full'>
+    <div className='text-white w-full h-full'>
       {<Header />}
       <Hero />
     </div>

@@ -77,4 +77,12 @@ const storeddirt = () => {
 }
 
 export default storeddirt
+
+<div className="rounded-full shadow-2xl w-64 h-64 bg-white">
+          <div className="rounded-full shadow-xl w-full h-full bg-black"></div>
+        </div>
+        <div className="rounded-full p-16 border-2 bg-black">
+          <div className="rounded-tl-full rounded-tr-full rounded-bl-full rounded-es-full rotate-45  shadow-2xl w-80 h-80 bg-white"></div>
+        </div>
+
 */

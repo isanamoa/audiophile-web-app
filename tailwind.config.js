@@ -11,6 +11,7 @@ module.exports = {
         'hero-mobile': "url('/assets/home/mobile/image-header.jpg')",
         'hero-tablet': "url('/assets/home/tablet/image-header.jpg')",
         'hero-desktop': "url('/assets/home/desktop/image-hero.jpg')",
+        'hero-desktop2': "url('/assets/home/desktop/image-hero2.png')",
         'footer-mobile': "url('/assets/shared/mobile/image-best-gear.jpg')",
         'footer-tablet': "url('/assets/shared/tablet/image-best-gear.jpg')",
         'footer-desktop': "url('/assets/shared/desktop/image-best-gear.jpg')"
