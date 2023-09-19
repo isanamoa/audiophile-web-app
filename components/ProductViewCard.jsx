@@ -5,10 +5,10 @@ import Image from 'next/image';
 
 const ProductViewCard = ({ products }) => {
   return (
-    <div className='w-full pt-3 pb-10 px-5 md:w-4/5 md:mx-auto md:px-0 md:py-5 gap-20 flex flex-col md:flex-row md:gap-4 justify-center md:justify-center items-center'>
-        <div className='w-full h-[724px] lg:h-[540px] flex gap-8 lg:gap-x-20 flex-col lg:flex-row justify-start items-start rounded'>
+    <section className='w-full lg:w-4/5 lg:mx-auto lg:px-0 pt-3 pb-24 md:pb-16 px-6 flex gap-20 flex-col md:flex-row md:gap-4 justify-center md:justify-center items-center'>
+        <article className='w-full h-[724px] md:h-[480px] lg:h-[540px] flex gap-8 lg:gap-x-20 flex-col md:flex-row justify-start items-start rounded'>
             
-            <div className='!w-full h-[352px] lg:h-[540px] bg-[#F1F1F1] rounded flex justify-center items-center'>
+            <section className='!w-full h-[352px] md:h-[480px] lg:h-[540px] bg-[#F1F1F1] rounded flex justify-center items-center'>
                 <Image 
                     width={220} 
                     height={243} 
@@ -37,9 +37,9 @@ const ProductViewCard = ({ products }) => {
                     h-[243px] lg:h-[386px] bg-contain bg-no-repeat 
                     bg-center bg-[url("/assets/home/mobile/image-speaker-zx7.jpg")]' 
                 />*/}
-            </div>
+            </section>
 
-            <div className='w-full lg:h-[540px] flex flex-col justify-between items-start lg:justify-center gap-y-5 md:text-left text-left mt-8'>
+            <section className='w-full lg:h-[540px] flex flex-col justify-between items-start lg:justify-center gap-y-5 md:text-left text-left mt-8'>
                 {
                     products?.new && 
                     <p className='text-[14px] text-[#e7aa87] uppercase font-semibold'>new product</p>
@@ -64,11 +64,11 @@ const ProductViewCard = ({ products }) => {
                     {products?.price && `$ ${products?.price}`}
                 </p>
                 
-                <div className='flex gap-3'>
-                    <div className='!w-[80px] lg:!w-[120px] h-[48px] flex'>
+                <section className='flex gap-3'>
+                    <section className='!w-[80px] lg:!w-[120px] h-[48px] flex'>
                         <SeeButton 
                             wid="w-auto" hig="h-auto"
-                            padd="px-4"
+                            padd="px-2"
                             butTitle="-" 
                             bgColors="bg-[#F1F1F1]"
                             bordered='border-0' 
@@ -93,7 +93,7 @@ const ProductViewCard = ({ products }) => {
 
                         <SeeButton 
                             wid="w-auto" hig="h-auto"
-                            padd="p-2"
+                            padd="px-2"
                             butTitle="+" 
                             bgColors="bg-[#F1F1F1]"
                             bordered='border-0' 
@@ -101,7 +101,7 @@ const ProductViewCard = ({ products }) => {
                             hoveredBg="hover:bg-[#F1F1F1]"
                             hoveredColor="hover:text-[#D87D4A]"
                         />
-                    </div>
+                    </section>
 
                     <SeeButton 
                         wid="w-[160px]" hig="h-[48px]"
@@ -112,11 +112,11 @@ const ProductViewCard = ({ products }) => {
                         hoveredBg="hover:bg-[#D87D4A]"
                         hoveredColor="hover:opacity-50"
                     />
-                </div>
-            </div>
+                </section>
+            </section>
 
-        </div>
-    </div>
+        </article>
+    </section>
   )
 }
 

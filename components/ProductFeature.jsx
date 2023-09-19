@@ -2,9 +2,11 @@ import React from 'react'
 
 const ProductFeature = ({ features }) => {
   return (
-    <div className='w-full py-10 px-5 mt-12 md:w-4/5 md:mx-auto md:px-0 md:py-5 gap-20 flex flex-col md:flex-row md:gap-4 justify-center md:justify-center items-center'>
-        <div className='w-full flex flex-col lg:flex-row gap-4'>
-            <div className='w-full lg:w-[70%] flex flex-col gap-3'>
+    <section className='w-full lg:w-4/5 lg:mx-auto lg:px-0 pt-3 pb-6 px-6 flex gap-20 flex-col md:flex-row md:gap-4 justify-center md:justify-center items-center'>
+        
+        <article className='w-full flex flex-col lg:flex-row gap-4'>
+            
+            <section className='w-full lg:w-[70%] flex flex-col gap-3'>
                 <h4 className='font-bold uppercase text-[24px]'>Features</h4>
                 <p className='lg:pr-48 text-slate-500 text-[15px]'>
                     {/*`Featuring a genuine leather head strap and premium earcups, these headphones 
@@ -20,10 +22,11 @@ const ProductFeature = ({ features }) => {
                     modern design aesthetic.`*/}
                     {features?.features}
                 </p>
-            </div>
-            <div className='w-full lg:w-[30%] flex flex-col gap-3'>
+            </section>
+
+            <section className='w-full lg:w-[30%] flex flex-col md:flex-row md:justify-start lg:flex-col lg:justify-start gap-3 md:gap-x-[33%] lg:gap-3 pt-6 lg:pt-0'>
                 <h4 className='font-bold uppercase text-[24px]'>In the Box</h4>
-                <div className='flex flex-col text-[15px]'>
+                <section className='flex flex-col text-[15px]'>
                     {
                         features?.accessories && features?.accessories.map((accessory, index) => (
                             <div key={index} className='w-full flex gap-3'>
@@ -47,10 +50,13 @@ const ProductFeature = ({ features }) => {
                             <div className='opacity-50'>3.5mm 5m Audio Cable</div>
                     </div>
                     */}
-                </div>
-            </div>
-        </div>
-    </div>
+                </section>
+
+            </section>
+
+        </article>
+
+    </section>
   )
 }
 

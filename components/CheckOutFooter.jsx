@@ -3,9 +3,9 @@ import Footer from './Footer'
 
 const CheckOutFooter = () => {
   return (
-    <div className='w-full'>
+    <section className='w-full'>
       <Footer />
-    </div>
+    </section>
   )
 }
 

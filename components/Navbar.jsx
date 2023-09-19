@@ -6,7 +6,7 @@ const Navbar = () => {
   const router = useRouter();
   return (
     <>
-      <div className='w-full md:w-1/2 flex flex-col md:flex-row gap-2 md:gap-x-10 justify-center md:justify-end items-center md:items-end font-bold uppercase'>
+      <section className='w-full lg:w-1/2 mt-3 flex flex-col md:flex-row gap-2 md:gap-x-10 justify-center items-center md:justify-start md:items-start lg:justify-end lg:items-end font-bold uppercase'>
         <Link href="/" underline='none' 
               sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'} }}>HOME</Link>
             
@@ -24,7 +24,7 @@ const Navbar = () => {
           component="button"
           onClick={() => router.push("/category/earphones")}
           sx={{color: '#FFF', cursor: 'pointer', fontSize: '0.813rem', '&:hover': {color: '#D87D4A'} }}>EARPHONES</Link>
-      </div>
+      </section>
     </>
   )
 }

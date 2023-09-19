@@ -12,15 +12,15 @@ const CheckOutForm = () => {
   }
 
   return (
-    <div className='w-full pt-3 pb-10 px-5 md:w-4/5 md:mx-auto md:px-0 md:py-5 gap-20 flex flex-col md:flex-row md:gap-4 justify-center lg:justify-between items-center lg:items-start'>
-        <form className='w-full lg:w-[75%] p-4 bg-white shadow-xl rounded-lg'>
+    <div className='w-full lg:w-4/5 lg:mx-auto pt-3 pb-10 px-6 lg:px-0 flex gap-20 flex-col lg:flex-row md:gap-4 justify-center lg:justify-between items-center lg:items-start'>
+        <form className='w-full lg:w-[75%] p-4 mb-5 bg-white shadow-xl rounded-lg'>
             
-            <h2 className='text-[24px] lg:text-[32px] text-black uppercase font-bold my-3'>CheckOut</h2>
+            <h2 className='text-[24px] lg:text-[32px] text-black uppercase font-bold pb-3'>CheckOut</h2>
             {/** Billing block */}
 
-            <div className='w-full mt-3'>
+            <div className='w-full pt-6'>
                 <h5 className='text-[14px] text-[#D87D4A] uppercase font-semibold'>Billing Details</h5>
-                <div className='w-full flex gap-3 flex-col lg:flex-row justify-between items-center'>
+                <div className='w-full flex gap-3 flex-col md:flex-row justify-between items-center'>
                     <div className='w-full lg:w-1/2 my-3'>
                         <label className='block'>Name</label>
                         <SpecialTextbox 
@@ -61,9 +61,9 @@ const CheckOutForm = () => {
 
                 </div>
 
-                <div className='w-full flex gap-3 flex-col lg:flex-row justify-between items-center'>
+                <div className='w-full flex gap-3 flex-col md:flex-row justify-between items-center'>
                     
-                    <div className='w-full lg:w-1/2 my-3'>
+                    <div className='w-full md:w-1/2 my-3'>
                         <label className='block'>Phone Number</label>
                         <SpecialTextbox 
                             inputType="text"
@@ -113,7 +113,7 @@ const CheckOutForm = () => {
 
                 </div>
 
-                <div className='w-full flex gap-3 flex-col lg:flex-row justify-between items-center'>
+                <div className='w-full flex gap-3 flex-col md:flex-row justify-between items-center'>
                     <div className='w-full  lg:w-1/2 my-3'>
                         <label className='block'>Zip Code</label>
                         <SpecialTextbox 
@@ -154,7 +154,7 @@ const CheckOutForm = () => {
 
                 </div>
 
-                <div className='w-full flex gap-3 flex-col lg:flex-row justify-between items-center'>
+                <div className='w-full flex gap-3 flex-col md:flex-row justify-between items-center'>
                     
                     <div className='w-full lg:w-1/2 my-3'>
                         <label className='block'>Country</label>
@@ -184,7 +184,7 @@ const CheckOutForm = () => {
             <div className='w-full mt-3 mb-4'>
                 <h5 className='text-[14px] text-[#D87D4A] uppercase font-semibold'>Payment Details</h5>
                 {/** e-Cash options block */}
-                <div className='w-full flex gap-x-3 flex-col lg:flex-row justify-between items-start'>
+                <div className='w-full flex gap-x-3 flex-col md:flex-row justify-between items-start'>
                     <div className='w-full lg:w-1/2 mt-3'>
                         <label className='block'>Payment Method</label>
                     </div>
@@ -222,7 +222,7 @@ const CheckOutForm = () => {
                 </div>
 
                 {/** e-Cash data block */}
-                <div className='w-full flex gap-3 flex-col lg:flex-row justify-between items-center'>
+                <div className='w-full flex gap-3 flex-col md:flex-row justify-between items-center'>
                     
                     <div className='w-full lg:w-1/2 my-3'>
                         <label className='block'>e-Money Number</label>

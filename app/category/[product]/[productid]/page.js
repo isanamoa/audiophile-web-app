@@ -25,10 +25,10 @@ const ProductPage = () => {
   }, [productid]);
   
   //console.log(fileData);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      {/** Section is for Product detail */}
+      {/** Section is for Product detail */      
+        fileData != [] && 
         <>
           <ProductHeroHeader />
           <BackNavigate newHref={`/category/${fileData?.category}`}/>
@@ -39,7 +39,7 @@ const ProductPage = () => {
           <ProductSection />
           <FooterSection />
         </> 
-    
+      }
     </main>
   )
 }

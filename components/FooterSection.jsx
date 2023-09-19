@@ -4,10 +4,10 @@ import Footer from './Footer'
 
 const FooterSection = () => {
   return (
-    <div className='w-full mt-12'>
+    <section className='w-full mt-12'>
       <HeroFooter />
       <Footer />
-    </div>
+    </section>
   )
 }
 

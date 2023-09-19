@@ -6,11 +6,11 @@ const BackNavigate = ({ newHref }) => {
   const router = useRouter();
 
   return (
-    <div className='w-full py-2 px-5 md:w-4/5 md:mx-auto md:px-0 md:py-5'>
+    <div className='w-full lg:w-4/5 lg:mx-auto py-2 px-6 lg:px-0'>
       <Link
         underline='none'
         component="button"
-        onClick={() => router.back(newHref)}
+        onClick={() => router.push(newHref)}
         sx={{ height:'48px', 
           mt:3, color:'#000',
           backgroundColor: "transparent",

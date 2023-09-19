@@ -5,49 +5,36 @@ import { useRouter } from 'next/navigation';
 const AdSection = () => {
     const router = useRouter();
   return (
-    <div className='w-full p-5 md:w-4/5 md:mx-auto md:py-5 md:px-0'>
+    <div className='w-full lg:w-4/5 lg:mx-auto px-6 py-5 lg:px-0'>
         
-        <div className='w-full mb-10 md:overflow-y-hidden h-[37.5rem] md:h-[35rem] rounded bg-[#D87D4A] flex flex-col gap-y-7 justify-center items-center md:flex-row md:gap-12'>
-            <div className='w-full md:mt-24 md:w-1/2 flex md:flex-col justify-center items-center md:justify-end'>
-                
-                {/*<Image 
-                    width={100} 
-                    height={100} 
-                    src={speakers[0]?.image.mobile} 
-                    alt="Speakers" 
-                className='!w-[172px] h-[207px] md:hidden'/>*/}
-
+        <div className='w-full mb-10 lg:overflow-y-hidden h-[37.5rem] md:h-[35rem] rounded bg-[#D87D4A] flex flex-col gap-y-7 justify-center items-center lg:flex-row lg:gap-12'>
+            <div className='w-full lg:mt-24 lg:w-1/2 flex lg:flex-col justify-center items-center lg:justify-end'>
                 
                 <div className={`!w-[172px] h-[207px] lg:!w-[410.234px] lg:h-[493px] bg-cover bg-center 
                     bg-[url("/assets/home/mobile/image-speaker-zx9.png")] 
                     md:bg-[url("/assets/home/tablet/image-speaker-zx9.png")]
                     lg:bg-[url("/assets/home/desktop/image-speaker-zx9.png")]`} />
                 
-                
-                {/*bg-[url("/assets/home/mobile/image-speaker-zx9.png")] 
-                    md:bg-[url("/assets/home/tablet/image-speaker-zx9.png")]
-                    lg:bg-[url("/assets/home/desktop/image-speaker-zx9.png")]*/}
-                
             </div>
-            <div className='w-full md:-mt-24 md:w-1/3 flex flex-col justify-center items-center md:justify-start md:items-start gap-5 text-center md:text-left text-white'>
+            <div className='w-full lg:-mt-24 lg:w-1/3 flex flex-col justify-center items-center lg:justify-start lg:items-start gap-5 text-center lg:text-left text-white'>
                 <h3 className='text-[2.25rem] uppercase font-bold px-20 md:px-0'>
-                    ZX9 <br className='hidden lg:block'/>
+                    ZX9 <br className='hidden md:block'/>
                     SPEAKER
                 </h3>
-                <p className='text-[0.938rem] text-slate-200 font-medium px-5 md:px-0'>
-                    Upgrade to premium speakers that are <br className='hidden lg:block'/>
-                    phenomenally built to deliver truly remarkable <br className='hidden lg:block'/>
+                <p className='text-[0.938rem] text-slate-200 font-medium px-5 lg:px-0'>
+                    Upgrade to premium speakers that are <br className='hidden md:block'/>
+                    phenomenally built to deliver truly remarkable <br className='hidden md:block'/>
                     sound.
                     
                 </p>
                 <SeeButton 
                     wid="w-[160px]" hig="h-[48px]"
                     butTitle="see product" 
-                    bgColors="bg-white"
+                    bgColors="bg-black"
                     bordered='border-2' 
-                    colors="text-black" 
-                    hoveredBg="hover:bg-black"
-                    hoveredColor="hover:text-white"
+                    colors="text-white" 
+                    hoveredBg="hover:bg-white"
+                    hoveredColor="hover:text-black"
                     handleClick={()=>router.push("/category/speakers/zx9-speaker")}
 
                 />
