@@ -10,10 +10,10 @@ const MenuLists = ({ isMenuOpen }) => {
     >
       
       <section 
-        className="relative w-full  items-center justify-center z-50 bg-white pt-[55%] md:pt-[15%]"
+        className="relative w-full  items-center justify-center z-50 bg-white pt-[65%] md:pt-[15%]"
       >
         {/* Modal Content */}
-        <section className="relative p-6 bg-white rounded-bl-lg rounded-br-lg shadow dark:bg-gray-700 ">
+        <section className="relative p-6 bg-white rounded-bl-lg rounded-br-lg shadow-lg">
           <section className='w-full gap-20 flex flex-col md:flex-row md:gap-4 justify-center md:justify-between lg:justify-center items-center'>
           
           <article className='w-full h-[165px] flex flex-col justify-center items-center  bg-[#F1F1F1] rounded'>

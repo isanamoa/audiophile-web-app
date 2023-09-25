@@ -32,7 +32,7 @@ const ProductPage = () => {
         <>
           <ProductHeroHeader />
           <BackNavigate newHref={`/category/${fileData?.category}`}/>
-          <ProductViewCard products={fileData} />
+          <ProductViewCard product={fileData} />
           <ProductFeature features={fileData}/>
           <GalaryList galleryData={fileData} />
           <SimilarProductCard similar={fileData} />

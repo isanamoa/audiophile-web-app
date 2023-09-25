@@ -1,15 +1,42 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SpecialTextbox } from './shared/InputBoxes'
 import { SeeButton } from './shared/Buttons'
 import CheckOutInfo from './CheckOutInfo'
+import CheckItems from './CheckItems';
 
 const CheckOutForm = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  
-  const handleCartState = (e) => {
-    e.preventDefault();
-    setIsCartOpen(prev=>!prev);
+  const [isCheckOut, setCheckOut] = useState(false);
+  const [eStatus, setEStatus] = useState(false);
+
+  const [CartData, setCartData] = useState([]);
+  const [buyerName, setBuyerName] = useState('');
+
+  const handleName = (e) => {
+    setBuyerName(e.target.value);
   }
+  const handleCheckOut = (e) => {
+    e.preventDefault();
+    if(buyerName === '') {
+        alert('Kindly fill all text inputs');
+    }else{
+        setCheckOut(prev=>!prev);
+    }
+  }
+
+  const handleEStatus = () => {
+    setEStatus(prev=>!prev);
+  }
+
+  useEffect( () => {
+        JSON.parse(localStorage.getItem('CartData')) != null &&
+        setCartData(JSON.parse(localStorage.getItem('CartData')));
+    }, []);
+
+  //console.log(CartData);
+
+  const grandTotal = CartData?.reduce((total, item)=>{
+        return total + (parseInt(item.qty) * parseInt(item.price))
+    }, 0) + 50;
 
   return (
     <div className='w-full lg:w-4/5 lg:mx-auto pt-3 pb-10 px-6 lg:px-0 flex gap-20 flex-col lg:flex-row md:gap-4 justify-center lg:justify-between items-center lg:items-start'>
@@ -26,6 +53,8 @@ const CheckOutForm = () => {
                         <SpecialTextbox 
                             inputType="text"
                             placeValue="Alexei Ward" 
+                            textValue={buyerName}
+                            handleChange={handleName}
                             bgColors="bg-transparent"
                             colors="text-black" 
                             alignTextValue="text-left"
@@ -66,7 +95,7 @@ const CheckOutForm = () => {
                     <div className='w-full md:w-1/2 my-3'>
                         <label className='block'>Phone Number</label>
                         <SpecialTextbox 
-                            inputType="text"
+                            inputType="telephone"
                             placeValue="+1 202-555-0136" 
                             bgColors="bg-transparent"
                             colors="text-black" 
@@ -117,7 +146,7 @@ const CheckOutForm = () => {
                     <div className='w-full  lg:w-1/2 my-3'>
                         <label className='block'>Zip Code</label>
                         <SpecialTextbox 
-                            inputType="email"
+                            inputType="text"
                             placeValue="10001" 
                             bgColors="bg-transparent"
                             colors="text-black" 
@@ -193,13 +222,10 @@ const CheckOutForm = () => {
                         <div className='w-full p-3 my-2 border-2 rounded-md border-gray-200 hover:border-[#D87D4A]'>
                             <SpecialTextbox 
                                 inputType="radio"
-                                placeValue="1137 Williams Avenue" 
                                 bgColors="bg-[#D87D4A] mr-3"
-                                colors="text-[#D87D4A]" 
-                                hoveredBorderColor="hover:border-[#D87D4A]"
-                                hoveredColor="hover:text-[#D87D4A]"
-                                hoveredBg="hover:bg-transparent"
+                                colors="accent-[#D87D4A]" 
                                 outlin="outline-none" 
+                                handleChange={handleEStatus}
                             />
                             <label>e-Money</label>
                         </div>
@@ -207,12 +233,8 @@ const CheckOutForm = () => {
                         <div className='w-full p-3 my-2 border-2 rounded-md border-gray-200 hover:border-[#D87D4A]'>
                             <SpecialTextbox 
                                 inputType="radio"
-                                placeValue="1137 Williams Avenue" 
                                 bgColors="bg-[#D87D4A] mr-3"
-                                colors="text-[#D87D4A]" 
-                                hoveredBorderColor="hover:border-[#D87D4A]"
-                                hoveredColor="hover:text-[#D87D4A]"
-                                hoveredBg="hover:bg-[#D87D4A]"
+                                colors="accent-[#D87D4A]"
                                 outlin="outline-none" 
                             />
                             <label>Cash on Delivery</label>
@@ -222,7 +244,7 @@ const CheckOutForm = () => {
                 </div>
 
                 {/** e-Cash data block */}
-                <div className='w-full flex gap-3 flex-col md:flex-row justify-between items-center'>
+                <div className={`${eStatus && 'block' || 'hidden'} w-full flex gap-3 flex-col md:flex-row justify-between items-center`}>
                     
                     <div className='w-full lg:w-1/2 my-3'>
                         <label className='block'>e-Money Number</label>
@@ -274,31 +296,22 @@ const CheckOutForm = () => {
             {/** Cart Total block */}
 
             {/** Cart list block */}
-            <div className='flex p-3 justify-between items-start'>
-                <div className='flex gap-x-3 justify-between items-start'>
-                    <div className='!w-[64px] h-[64px] bg-[#F1F1F1] rounded flex justify-center items-center'>
-                        <div className='!w-[36.19px] h-[40px] bg-contain bg-no-repeat bg-center bg-[url("/assets/home/mobile/image-speaker-zx7.jpg")]' />
-                    </div>
-
-                    <div className='w-full flex flex-col justify-start items-start gap-y-2 text-left'>
-
-                        <p className='text-[15px] uppercase font-bold'>
-                            XX99 Mark I 
-                        </p>
-                        
-                        <p className='text-[14px] opacity-50'>$2,999</p>
-                        
-                    </div>
-                </div>
-                <div>
-                    <p className='text-[14px] opacity-50'>x1</p>
-                </div>
-            </div>
+            { 
+                CartData?.map((item, index) => ( 
+                    <CheckItems key={index} 
+                    cart={item} 
+                /> 
+                ))
+            }
 
             <div className='flex flex-col p-3 gap-2'>
                 <div className='flex justify-between items-center'>
                     <p>Total</p>
-                    <p>$5,396</p>
+                    <p>
+                        ${ CartData?.reduce((total, item)=>{
+                                return total + (parseInt(item.qty) * parseInt(item.price))
+                            }, 0)}
+                    </p>
                 </div>
 
                 <div className='flex justify-between items-center'>
@@ -308,12 +321,18 @@ const CheckOutForm = () => {
 
                 <div className='flex justify-between items-center'>
                     <p>VAT (INCLUDED)</p>
-                    <p>$1,079</p>
+                    <p>
+                        ${ (CartData?.reduce((total, item)=>{
+                            return total + (parseInt(item.qty) * parseInt(item.price))
+                        }, 0) * 0.2).toFixed(2).toLocaleString()}
+                    </p>
                 </div>
 
                 <div className='flex justify-between items-center'>
                     <p>Grand Total</p>
-                    <p className='text-[#D87D4A]'>$5,446</p>
+                    <p className='text-[#D87D4A]'>
+                        $ {grandTotal}
+                    </p>
                 </div>
 
                 <SeeButton 
@@ -326,10 +345,13 @@ const CheckOutForm = () => {
                     colors="text-white" 
                     hoveredBg="hover:bg-[#D87D4A]"
                     hoveredColor="hover:opacity-50"
-                    handleClick={handleCartState}
+                    handleClick={handleCheckOut}
                 />
 
-                <CheckOutInfo modalState={{isCartOpen, handleCartState}} />
+                <CheckOutInfo 
+                    checkData={{itemOne: CartData[0], itemRemain: CartData?.length - 1, grandTotal: grandTotal}} 
+                    modalState={{isCheckOut, handleCheckOut}} 
+                />
 
             </div>
 

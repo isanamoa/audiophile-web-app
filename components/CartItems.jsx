@@ -1,22 +1,30 @@
 import React from 'react';
 import { SeeButton } from './shared/Buttons';
-import { SpecialTextbox } from './shared/InputBoxes';
+import { ReadOnlyTextbox } from './shared/InputBoxes';
+import Image from 'next/image';
 
-const CartItems = () => {
+const CartItems = ({ cart, incrementAction, decrementAction }) => {
+    //console.log(incrementAction);
   return (
     <div className='flex justify-between items-start'>
         <div className='w-full flex gap-x-3 justify-between items-start'>
             <div className='!w-[64px] h-[64px] bg-[#F1F1F1] rounded flex justify-center items-center'>
-                <div className='!w-[36.19px] h-[40px] bg-contain bg-no-repeat bg-center bg-[url("/assets/home/mobile/image-speaker-zx7.jpg")]' />
+                {/** <div className='!w-[36.19px] h-[40px] bg-contain bg-no-repeat bg-center bg-[url("/assets/home/mobile/image-speaker-zx7.jpg")]' /> */}
+                <Image src={`/assets/cart/image-${cart?.slug}.jpg`} 
+                    alt='cart image' 
+                    width={40} height={40} 
+                />
             </div>
 
             <div className='w-full flex flex-col justify-start items-start gap-y-2 text-left'>
 
-                <p className='text-[15px] text-black uppercase font-bold'>
-                    XX99 Mark I 
+                <p className='text-[15px] text-ellipsis text-black uppercase font-bold'>
+                    {cart?.name} 
                 </p>
                 
-                <p className='text-[14px] text-black opacity-50'>$2,999</p>
+                <p className='text-[14px] text-black opacity-50'>
+                    {`$ ${cart?.price * cart?.qty}`}
+                </p>
                 
             </div>
         </div>
@@ -30,19 +38,14 @@ const CartItems = () => {
                 colors="text-black" 
                 hoveredBg="hover:bg-[#F1F1F1]"
                 hoveredColor="hover:text-[#D87D4A]"
+                handleClick={decrementAction}
+
             />
 
-            <SpecialTextbox 
+            <ReadOnlyTextbox 
                 inputType='text'
-                placeValue="1" 
-                bgColors="bg-[#F1F1F1]"
-                colors="text-black" 
-                alignTextValue="text-center"
-                wid="w-[48px]" 
-                bordered="border-0" 
-                hoveredColor="hover:text-black"
-                hoveredBg="hover:bg-[#F1F1F1]"
-                outlin="outline-none" 
+                textValue={cart?.qty}
+                classStyle='w-full bg-[#F1F1F1] text-black text-center border-0 outline-none hover:text-black hover:bg-[#F1F1F1]'
             />
 
             <SeeButton 
@@ -54,6 +57,7 @@ const CartItems = () => {
                 colors="text-black" 
                 hoveredBg="hover:bg-[#F1F1F1]"
                 hoveredColor="hover:text-[#D87D4A]"
+                handleClick={incrementAction}
             />
                 
 

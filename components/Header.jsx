@@ -13,6 +13,7 @@ const Header = () => {
   const router = useRouter();
 
   const handleCartState = () => {
+    //router.refresh();
     setIsCartOpen(prev=>!prev);
   }
 
