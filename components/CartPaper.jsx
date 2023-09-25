@@ -59,7 +59,7 @@ const CartPaper = ({ modalState }) => {
           {/* Modal Content */}
         {
             carts.length === 0 ?
-            (<div className='relative lg:right-32 xs:p-10 bg-white max-w-[377px] rounded-lg shadow '>
+            (<div className='relative lg:right-32 p-10 bg-white max-w-[377px] rounded-lg shadow '>
                 <p className='text-black opacity-50'>Cart is empty</p>
             </div>) :
             (

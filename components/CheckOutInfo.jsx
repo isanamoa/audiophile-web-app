@@ -9,11 +9,6 @@ const CheckOutInfo = ({ checkData, modalState }) => {
 
     const { itemOne, itemRemain, grandTotal } = checkData;
 
-    const handleAction = () => {
-        router.refresh('/')
-        
-    }
-
   return (
     <div 
         className={`${modalState.isCheckOut && 'block' || 'hidden'}  fixed left-0 top-16 right-0 flex items-center justify-center z-20`}
@@ -87,7 +82,11 @@ const CheckOutInfo = ({ checkData, modalState }) => {
             {/* Modal footer */}
             <div className='flex flex-col p-6 space-y-6 gap-2'>
                 
-                <Link href="/"
+                <button 
+                    onClick={() => {  
+                        localStorage.setItem('CartData', JSON.stringify([]));    
+                        router.refresh('/');  
+                    }}
                     underline='none'
                     sx={{ width:1, height:'48px', 
                     mt:3, p:2, color:'#FFF',
@@ -97,7 +96,7 @@ const CheckOutInfo = ({ checkData, modalState }) => {
                     '&:hover': {opacity:0.5} }}
                 >
                     back to home
-                </Link>
+                </button>
             </div>
 
           </div>

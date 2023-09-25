@@ -72,7 +72,6 @@ const MenuLists = ({ isMenuOpen }) => {
                         hoveredBg="hover:bg-transparent"
                         hoveredColor="hover:text-[#D87D4A]"
                         handleClick={()=>router.push("/category/earphones")}
-
                     />
                 </section>
 
